@@ -11,7 +11,7 @@ export const Container = styled(TouchableOpacity)`
     padding: 10px;
     background-color: ${({theme})=>theme.COLORS.GRAY_400};
     flex-direction: row;
-    align-items: center;
+    align-items: center;    
   `;
 
 export const Text = styled.Text`
