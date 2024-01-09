@@ -9,7 +9,7 @@ export const Groups = () => {
     <Container>
       <Header/>
       <HigthLight title='Sala 03' subTitle='Turma de Programação' />
-      <Group/>
+      <Group text='asdfghjk'/>
     </Container>
   )
 }
