@@ -14,8 +14,8 @@ export const BockButton = styled.TouchableOpacity`
 `;
 
 export const Image = styled.Image`
-    width: 46;
-    height: 46;
+    width: 46px;
+    height: 46px;
 `;
 
 export const BackIcon = styled(CaretLeft).attrs(({ theme })=>({
