@@ -9,7 +9,7 @@ type props = TouchableOpacityProps & {
 
 export function Button({ title, type = 'PRIMARY', ...rest}: props) {
   return (
-    <Container type='PRIMARY' {...rest} >
+    <Container type={type} {...rest} >
         <Title>
             {title}
         </Title>
