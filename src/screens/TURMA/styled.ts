@@ -1,3 +1,4 @@
+import { css } from "styled-components";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
@@ -17,4 +18,19 @@ export const Form = styled.View`
     border-radius: 8px;
     overflow: hidden;
 
+`;
+
+export const ListPlayers = styled.View`
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+
+`;
+
+export const NumberOfPlayers = styled.Text`
+${({theme})=> css`
+    color: ${theme.COLORS.GRAY_200};
+    font-size: ${theme.FONT_SIZE.MD}px;
+    
+`};
 `;

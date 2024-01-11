@@ -14,7 +14,6 @@ type props = {
 export const Container = styled(TouchableOpacity)`
     align-items: center;
     justify-content: center;
-    background-color: ${({theme}) => theme.COLORS.GRAY_700};
     min-height: 56px;
     max-height: 56px;
     margin-left: 10px;
