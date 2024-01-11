@@ -11,7 +11,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
-    font-size: ${({ theme }) => theme.FONT_SIZE.XL};
+    font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
 `;
 
 export const SubTitle = styled.Text`

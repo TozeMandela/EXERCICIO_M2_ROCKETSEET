@@ -5,6 +5,7 @@ import { HigthLight } from '@components/higthLight/higthLight'
 import { Group } from '@components/Group/Group'
 import { FlatList } from 'react-native'
 import { EmptyList } from '@components/empty/EmptyList'
+import { Button } from '@components/Button/Button'
 
 
 export const Groups = () => {
@@ -25,6 +26,8 @@ export const Groups = () => {
           <EmptyList text='Nenhuma sala encontrada'/>
         )}
       />
+
+      <Button title='Criar nova turma'/>
     </Container>
   )
 }
