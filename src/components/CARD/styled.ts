@@ -13,6 +13,7 @@ export const Container = styled.View`
 
         align-items: center;
         width: 100%;
+        margin-bottom: 8px;
         
     `};
     

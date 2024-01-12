@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Form, ListPlayers, NumberOfPlayers } from './styled'
 import Header from '@components/header/header'
 import { HigthLight } from '@components/higthLight/higthLight'
@@ -8,11 +8,26 @@ import { Filter } from '@components/FILTER/Filter'
 import { FlatList } from 'react-native'
 import { CardPeople } from '@components/CARD/CardPeople'
 import { EmptyList } from '@components/empty/EmptyList'
+import { useRoute } from '@react-navigation/native'
+
+
+type RouteParams = {
+  groups: string,
+}
 
 export function NewTurma() {
 
-const [team, setTeam] = useState('turma a');
-const [players, setPlayers] = useState(['Mandela']);
+const [team, setTeam] = useState('');
+const [turma, setTurma] = useState(['tuema a', 'turma']);
+const [players, setPlayers] = useState(['da', 'do']);
+const route = useRoute();
+
+const { groups } = route.params as RouteParams;
+
+useEffect(() =>{
+  setTurma(group => [...group, groups]);
+}, []);
+
 
 
   return (
@@ -21,14 +36,16 @@ const [players, setPlayers] = useState(['Mandela']);
         <HigthLight title='Turmas' subTitle='adicione a galera e separe os times' />
         
         <Form>
-            <Input placeholder='Nome do participante'/>
+            <Input 
+            />
             <ButtonIcon type='PRIMARY' icon='add'/>
         </Form>
         
         <ListPlayers>
           <FlatList
-          data={['turma a', 'turma b', 'turma c', 'turma d']}
+          data={turma}
           keyExtractor={(item)=>item}
+
           renderItem={({item})=>(
             <Filter text={item} 
             isActive={(item === team) ? true : false} 
@@ -45,7 +62,8 @@ const [players, setPlayers] = useState(['Mandela']);
 
         <FlatList 
           data={players}
-          keyExtractor={({item})=> item}
+          keyExtractor={(item)=>item}
+
           renderItem={({item})=>(
             <CardPeople 
               name={item}
