@@ -25,7 +25,7 @@ const route = useRoute();
 const { groups } = route.params as RouteParams;
 
 useEffect(() =>{
-  setTurma(group => [...group, groups]);
+  setTeam(groups);
 }, []);
 
 
@@ -33,7 +33,7 @@ useEffect(() =>{
   return (
     <Container>
         <Header showBackButton />
-        <HigthLight title='Turmas' subTitle='adicione a galera e separe os times' />
+        <HigthLight title={team} subTitle='adicione a galera e separe os times' />
         
         <Form>
             <Input 

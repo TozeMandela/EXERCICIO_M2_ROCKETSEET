@@ -25,6 +25,10 @@ export const Groups = () => {
     }
   }
 
+  function handleOpenTeam(groups: string){
+    navigation.navigate('Team', { groups});
+  }
+
   useFocusEffect(useCallback(() => {
     storage();
   }, [group]));
@@ -42,7 +46,7 @@ export const Groups = () => {
       <FlatList 
         data={group}
         keyExtractor={(item) => item}
-        renderItem={({item}) => <Group text={item}/>} 
+        renderItem={({item}) => <Group text={item} onPress={() => handleOpenTeam(item)}/>} 
         contentContainerStyle={{flex: 1}}
         ListEmptyComponent={() => (
           <EmptyList text='Nenhuma sala encontrada'/>

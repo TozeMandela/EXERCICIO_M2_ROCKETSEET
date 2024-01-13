@@ -2,6 +2,7 @@
 
 
  import { GROUP_COLLATION } from "@storage/storageConfig";
+import { AppExcetion } from "@utils/AppExcetion";
 
 
  export async function setGroupCreate(newGroup: string){
@@ -9,6 +10,10 @@
         const dataAll = await getGroupAll();
 
         if(!dataAll) return await AsyncStorage.setItem(GROUP_COLLATION, newGroup);
+
+        const existingGroup = dataAll.includes(newGroup);
+
+        if(existingGroup) throw new AppExcetion(`Group ${newGroup} already exists`);
 
         const data = JSON.stringify([...dataAll, newGroup]);
 
